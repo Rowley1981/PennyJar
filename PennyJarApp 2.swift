@@ -11,7 +11,7 @@ import SwiftUI
 struct PennyJarApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(budgetStore: BudgetStore)
         }
     }
 }
