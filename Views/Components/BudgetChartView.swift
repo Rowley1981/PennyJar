@@ -19,12 +19,6 @@ struct BudgetChartView: View {
 }
 
 #Preview {
-    BudgetChartView(
-        budget: Budget(
-            name: "Monthly Budget",
-            currency: Currency(code: "USD", name: "US Dollar", symbol: "$"),
-            frequency: .monthly,
-            date: Date()
-        )
-    )
+    let budget = Budget(name: "December 2024", currency: .gbp, frequency: .monthly, date: .now)
+    BudgetChartView(budget: budget)
 } 

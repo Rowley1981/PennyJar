@@ -17,4 +17,16 @@ struct ProgressBar: View {
         }
         .clipShape(Capsule())
     }
+}
+
+#Preview {
+    VStack {
+        ProgressBar(value: 0.3)
+            .frame(height: 8)
+        ProgressBar(value: 0.7)
+            .frame(height: 8)
+        ProgressBar(value: 1.0)
+            .frame(height: 8)
+    }
+    .padding()
 } 

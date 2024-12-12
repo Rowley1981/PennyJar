@@ -24,4 +24,13 @@ struct CategoryPieChart: View {
         .padding()
         .cardStyle()
     }
+}
+
+#Preview {
+    let budget = Budget(name: "December 2024", currency: .gbp, frequency: .monthly, date: .now)
+    CategoryPieChart(categories: [
+        Category(name: "Groceries", budget: budget, budgetAmount: 500, icon: "cart", color: .green),
+        Category(name: "Transport", budget: budget, budgetAmount: 200, icon: "bus", color: .blue),
+        Category(name: "Entertainment", budget: budget, budgetAmount: 300, icon: "film", color: .purple)
+    ])
 } 

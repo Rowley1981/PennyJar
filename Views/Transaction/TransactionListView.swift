@@ -88,4 +88,14 @@ struct TransactionListView: View {
             }
         }
     }
+}
+
+#Preview {
+    let budget = Budget(name: "December 2024", currency: .gbp, frequency: .monthly, date: .now)
+    let budgetStore = BudgetStore()
+    budgetStore.budgets = [budget]
+    
+    return NavigationStack {
+        TransactionListView(budgetStore: budgetStore)
+    }
 } 

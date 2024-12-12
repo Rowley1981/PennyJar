@@ -39,4 +39,10 @@ struct CurrencyPicker: View {
         .navigationTitle("Select Currency")
         .navigationBarTitleDisplayMode(.inline)
     }
+}
+
+#Preview {
+    NavigationStack {
+        CurrencyPicker(selection: .constant(.gbp))
+    }
 } 

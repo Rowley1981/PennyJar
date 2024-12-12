@@ -32,4 +32,28 @@ struct SpendingTrendChart: View {
         .padding()
         .cardStyle()
     }
+}
+
+#Preview {
+    let budget = Budget(name: "December 2024", currency: .gbp, frequency: .monthly, date: .now)
+    let groceriesCategory = Category(
+        name: "Groceries",
+        budget: budget,
+        budgetAmount: 500,
+        icon: "cart",
+        color: .green
+    )
+    
+    SpendingTrendChart(
+        expenses: [
+            Expense(amount: 25.99, date: .now, note: "Groceries", category: groceriesCategory),
+            Expense(amount: 45.00, date: .now.addingTimeInterval(-86400), note: "Transport", category: groceriesCategory),
+            Expense(amount: 15.00, date: .now.addingTimeInterval(-172800), note: "Coffee", category: groceriesCategory),
+            Expense(amount: 89.99, date: .now.addingTimeInterval(-259200), note: "Shopping", category: groceriesCategory)
+        ],
+        budgetAmount: 500,
+        color: .blue
+    )
+    .frame(height: 200)
+    .padding()
 } 

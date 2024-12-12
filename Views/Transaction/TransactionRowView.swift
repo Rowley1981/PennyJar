@@ -40,4 +40,22 @@ struct TransactionRowView: View {
         }
         .padding(.vertical, 4)
     }
+}
+
+#Preview {
+    List {
+        let budget = Budget(name: "December 2024", currency: .gbp, frequency: .monthly, date: .now)
+        TransactionRowView(transaction: Transaction(
+            amount: 25.99,
+            date: .now,
+            note: "Grocery shopping",
+            category: Category(
+                name: "Groceries",
+                budget: budget,
+                budgetAmount: 500,
+                icon: "cart",
+                color: .green
+            )
+        ))
+    }
 } 
