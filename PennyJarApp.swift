@@ -4,6 +4,7 @@ import SwiftUI
 struct PennyJarApp: App {
     @State private var budgetStore: BudgetStore
     @State private var transactionStore: TransactionStore
+    @State private var categoryStore = CategoryStore()
     @State private var showError = false
     @State private var errorMessage = ""
     
@@ -24,6 +25,7 @@ struct PennyJarApp: App {
             ContentView()
                 .environment(budgetStore)
                 .environment(transactionStore)
+                .environment(categoryStore)
                 .alert("Error", isPresented: $showError) {
                     Button("OK") { }
                 } message: {
